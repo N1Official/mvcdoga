@@ -3,8 +3,8 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\StoreCharacterRequest;
-use App\Models\CharacterModel;
-use App\Models\HouseModel;
+use App\Models\Character;
+use App\Models\House;
 use Illuminate\Http\Request;
 
 class CharacterController extends Controller
@@ -16,7 +16,7 @@ class CharacterController extends Controller
      */
     public function index()
     {
-        $characters = CharacterModel::all();
+        $characters = Character::all();
         return view("characters.index",[
             "characters" => $characters,
             "title" => "HP karakterek",
@@ -30,8 +30,8 @@ class CharacterController extends Controller
      */
     public function create()
     {
-        $houses = HouseModel::all();
-        return view("characters.show", [
+        $houses = House::all();
+        return view("characters.create", [
             "character" => $houses,
             "title" => "új karakter",
         ]);
@@ -57,7 +57,7 @@ class CharacterController extends Controller
      */
     public function show($id)
     {
-        $character = CharacterModel::FindOrFail($id);
+        $character = Character::FindOrFail($id);
         return view("characters.show", [
             "character" => $character,
             "title" => "{$character->house->name}-{$character->name} karakter",
@@ -73,7 +73,7 @@ class CharacterController extends Controller
      */
     public function destroy($id)
     {
-        $character = CharacterModel::FindOrFail($id);
+        $character = Character::FindOrFail($id);
         return redirect("characters.index");
     }
 }
