@@ -60,7 +60,7 @@ class CharacterController extends Controller
         $character = Character::FindOrFail($id);
         return view("characters.show", [
             "character" => $character,
-            "title" => "{$character->house->name}-{$character->name} karakter",
+            "title" => "Valamelyik ház - {$character->name}",
         ]);
     }
 
