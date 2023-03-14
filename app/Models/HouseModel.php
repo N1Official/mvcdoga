@@ -9,8 +9,5 @@ class HouseModel extends Model
 {
     use HasFactory;
     public $timestamps = false;
-    public function hasMany($related, $foreignKey = "house_id", $localKey = "id")
-    {
-
-    }
+    public function hasMany($related, $foreignKey = "house_id", $localKey = "id"){}
 }

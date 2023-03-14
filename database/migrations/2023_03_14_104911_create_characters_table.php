@@ -23,7 +23,7 @@ return new class extends Migration
             $table->string("species",50);
             $table->date("birth")->nullable();
             $table->date("death")->nullable();
-            $table->bigInteger("house_id");
+            $table->foreign("house_id")->references('id')->on("house");
         });
     }
 
