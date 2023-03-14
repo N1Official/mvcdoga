@@ -38,9 +38,9 @@
             <div class="mb-3">
                 <label for="house">Example select</label>
                 <select class="form-select">
-                    <option value="Griffendél">Griffendél</option>
-                    <option value="2">Two</option>
-                    <option value="3">Three</option>
+                    @foreach($houses as $house)
+                    <option value="{{$house->id}}">{{$house->name}}</option>
+                    @endforeach
                 </select>
             </div>
             <button type="button" class="btn btn-success">Mentés!</button>

@@ -32,8 +32,8 @@ class CharacterController extends Controller
     {
         $houses = House::all();
         return view("characters.create", [
-            "character" => $houses,
-            "title" => "új karakter",
+            "houses" => $houses,
+            "title" => "Új karakter",
         ]);
     }
 

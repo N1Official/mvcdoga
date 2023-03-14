@@ -14,7 +14,7 @@ use Illuminate\Support\Facades\Route;
 |
 */
 Route::get('/', [CharacterController::class, 'index'])->name("characters.index");
-Route::get('/characters/{id}', [CharacterController::class, 'show'])->name("characters.show");
+Route::get('/characters/{id}', [CharacterController::class, 'show'])->whereNumber('id')->name("characters.show");
 Route::get('/characters/create', [CharacterController::class, 'create'])->name("characters.create");
 Route::post('/characters', [CharacterController::class, 'store'])->name("characters.store");
-Route::delete('/characters/{id}', [CharacterController::class, 'store'])->name("characters.store");
+Route::delete('/characters/{id}', [CharacterController::class, 'destroy'])->whereNumber('id')->name("characters.destroy");
