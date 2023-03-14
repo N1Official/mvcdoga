@@ -14,8 +14,9 @@ return new class extends Migration
     public function up()
     {
         Schema::create('houses', function (Blueprint $table) {
-            $table->id();
-            $table->timestamps();
+            $table->id()->autoIncrement(true);
+            $table->string("name",50);
+            $table->string("img",30);
         });
     }
 
